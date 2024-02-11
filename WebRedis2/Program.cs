@@ -1,8 +1,11 @@
+using StackExchange.Redis;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+var conn = builder.Configuration["RedisConnection"];
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(builder.Configuration["RedisConnection"]));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
