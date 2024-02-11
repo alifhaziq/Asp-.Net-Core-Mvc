@@ -11,13 +11,9 @@ namespace WebRedis2.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IDatabase _redisDb;
 
-        public HomeController(IConnectionMultiplexer connectionMultiplexer)
-        {
-            _redisDb = connectionMultiplexer.GetDatabase();
-        }
-
         public HomeController(ILogger<HomeController> logger)
         {
+            //_redisDb = connectionMultiplexer.GetDatabase();
             _logger = logger;
         }
 
