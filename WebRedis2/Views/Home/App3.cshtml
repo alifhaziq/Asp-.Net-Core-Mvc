@@ -1,8 +1,10 @@
-﻿@{
+﻿@model Application3;
+@{
     ViewData["Title"] = "Application3";
 }
 
 <div class="container fluid pb-3 -mt-5">
+    <form asp-action="App3" method="post">
     <hr>
     <h5>Declaration on Foreign Account tax Compliance Act (FATCA)</h5>
     <hr>
@@ -10,14 +12,15 @@
         <div class="col-md-12 col-sm-12">
             <p><b>DECLARATION WHETHER UNITED STATES OF AMERICA ("US") PERSONS</b></p>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
+                    <input asp-for="Checkboxes[0]" value="Not US person" class="form-check-input" type="checkbox" id="notUsPerson">
+                    <label class="form-check-label" for="flexCheckDefault" for="notUsPerson">
                     I am/ we are <b>NOT</b> a US person/corporation as defined under FATCA.
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="usPerson">
-                <label class="form-check-label" for="flexCheckDefault">
+                @*<input class="form-check-input" type="checkbox" value="" id="usPerson">*@
+                    <input asp-for="Checkboxes[1]" value="US person" class="form-check-input" type="checkbox" id="usPerson">
+                    <label class="form-check-label" for="usPerson">
                     I am/ we are a US person/corporation<Span> *</Span>
                     (I/we understand that I/We must complete form W-9 which can be obtained from AS website (www.apexsecurities.com.my) when I/we trade on US markets.)
                 </label>
@@ -266,6 +269,7 @@
     </div>
     <div class="text-right mt-3">
         <a type="button" class="btn btn-secondary">Clear</a>
-        <a type="button" href="application3.html" class="btn btn-primary">Submit 3/3</a>
+        <button type="submit" class="btn btn-primary">Submit 3/3</button>
     </div>
+    </form>
 </div>
