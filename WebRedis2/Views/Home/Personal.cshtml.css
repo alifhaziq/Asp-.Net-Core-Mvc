@@ -1,0 +1,48 @@
+﻿
+/* Heading */
+.h5 {
+    margin: 15px;
+    padding-top: 10px; /* Reduce padding */
+}
+
+.btn {
+    border-radius: 10px
+}
+
+.form-control {
+    border-radius: 10px; /* Add rounded corners to input fields */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Add a subtle shadow */
+    padding: 10px;
+}
+
+.form-select {
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 35px;
+    text-align: 10px;
+}
+
+.input {
+    position: relative;
+    margin-bottom: 15px;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+.form-label {
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.2s ease-out;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label {
+    top: 0;
+    font-size: 14px; /* Adjust as needed */
+    transform: translateY(-100%);
+    color: #000000; /* Adjust color as needed */
+}

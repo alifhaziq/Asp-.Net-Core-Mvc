@@ -1,0 +1,38 @@
+﻿.btn {
+    border-radius: 10px;
+}
+
+/* Heading */
+.h5 {
+    margin: 15px;
+    padding-top: 10px; /* Reduce padding */
+}
+
+/* Form Styling */
+.form-label {
+    margin-top: 10 px;
+}
+
+.form-control {
+    border-radius: 10px; /* Add rounded corners to input fields */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Add a subtle shadow */
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.form-select {
+    padding: 3px;
+    border-radius: 35px;
+    text-align: 10px;
+    margin-bottom: 25px;
+}
+
+p {
+    margin-top: 7px;
+    margin-bottom: 1rem;
+}
+
+.params {
+    margin-top: -10px;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,305 @@
+﻿@model Personal;
+@{
+    ViewData["Title"] = "Personal App";
+}
+
+<div class="container fluid pb-3 -mt-5">
+    <hr>
+    <h5>Personal / Individual Investor</h5>
+    <hr>
+    <div class="row">
+        <form asp-action="Personal"></form>
+        <div class="col-md-12 col-sm-12">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Title</option>
+                <option value="1">Tan Sri</option>
+                <option value="1">Dato' Sri</option>
+                <option value="1">Datuk Sri</option>
+                <option value="1">Mr.</option>
+                <option value="1">Miss</option>
+                <option value="1">Madam</option>
+                <option value="2">Others</option>
+            </select>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="fullname" placeholder=" ">
+                <label for="fullname" class="form-label">FullName <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">New / Old NRIC <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="dob" placeholder="">
+                <label for="dob" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="cob" placeholder="">
+                <label for="cob" class="form-label">Country of Birth <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="phoneNumber" placeholder="">
+                <label for="cob" class="form-label">Phone Number <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="phoneNumber" placeholder="">
+                <label for="phoneNumber" class="form-label">Contact No (Home/Office) <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="email" placeholder="">
+                <label for="email" class="form-label">Email address <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <select class="form-select">
+                <option selected>Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </select>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <select class="form-select" id="national" onchange="toggleForms()">
+                <option selected>Nationality</option>
+                <option value="1">Malaysia</option>
+                <option value="2">Others</option>
+            </select>
+            <br>
+            <label class="form-label"></label>
+            <input type="text" class="form-control" id="other" placeholder="Other, Please Specify" style="display: none;">
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <select class="form-select" id="maritalStatus" onchange="toggleInputFields()">
+                <option selected>Martial Status</option>
+                <option value="1">Single</option>
+                <option value="2">Married</option>
+                <option value="3">Others</option>
+            </select>
+            <br>
+            <label class="form-label"></label>
+            <input type="text" class="form-control" id="married" placeholder="No. of Dependents" style="display: none;">
+
+            <label class="form-label"></label>
+            <input type="text" class="form-control" id="others" placeholder="Other, Please Specify" style="display: none;">
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="address1" placeholder="">
+                <label for="address1" class="form-label">Address 1<span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="address2" placeholder="">
+                <label for="address2" class="form-label">Address 2<span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="postcode" placeholder="">
+                <label for="postcode" class="form-label">PostCode <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="town" placeholder="">
+                <label for="town" class="form-label">Town <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="state" placeholder="">
+                <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="country" placeholder="">
+                <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h5>Spouse / Next Of Kin (if Applicable)</h5>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="fullname" placeholder="">
+                <label for="fullname" class="form-label">FullName <span class="text-danger"></span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">New / Old NRIC <span class="text-danger"></span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Name of Employer <span class="text-danger"></span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Occupation <span class="text-danger"></span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Phone Number <span class="text-danger"></span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">No. Year In Service <span class="text-danger"></span></label>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Employer's Address 1 <span class="text-danger"></span></label>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Employer's Address 2 <span class="text-danger"></span></label>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h5>Employment / Business</h5>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Name Of Employer / Business <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Employer's Nature of Business <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Address 1 <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Address 2 <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Position Held <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">No.Year In Service <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Current estimated market value of residence (if own property): RM <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Gross Annual Income (RM)</option>
+                <option value="1">RM20,000 and below</option>
+                <option value="2">RM20,001 - RM40,000</option>
+                <option value="3">RM40,001 - RM60,000</option>
+                <option value="4">RM60,001 - RM100,000</option>
+                <option value="5">RM100,001 - RM250,000</option>
+                <option value="6">RM250,001 - RM500,000</option>
+                <option value="7">RM500,001 - RM1,000,000</option>
+                <option value="8">Above RM1,000,000</option>
+            </select>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Source of Funds</option>
+                <option value="1">Employment</option>
+                <option value="2">Savings</option>
+                <option value="3">Business Income</option>
+                <option value="4">Investment Income</option>
+            </select>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Estimated Net Worth</option>
+                <option value="1">RM50,000 and below</option>
+                <option value="2">RM50,001 - RM100,000</option>
+                <option value="3">RM100,001 - RM200,000</option>
+                <option value="4">RM200,001 - RM500,000</option>
+                <option value="5">RM500,001 - RM1,000,000</option>
+                <option value="6">RM1,000,001 - RM3,000,000</option>
+                <option value="8">Above RM3,000,000</option>
+            </select>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Source of Wealth</option>
+                <option value="1">Employment</option>
+                <option value="2">Inheritance</option>
+                <option value="3">Business Income</option>
+                <option value="4">Investment Income</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+    <h5>Bank Particulars (for e-transaction payment purposes)</h5>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Account Type</option>
+                <option value="1">Saving Account</option>
+                <option value="2">Current Account</option>
+            </select>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Bank Name <span class="text-danger">*</span></label>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="input">
+                <input type="text" class="form-control" id="nric" placeholder="">
+                <label for="nric" class="form-label">Account No. <span class="text-danger">*</span></label>
+            </div>
+        </div>
+    </div>
+    <div class="text-right mt-3">
+        <a type="button" href="" class="btn btn-secondary">Clear</a>
+        <a type="button" class="btn btn-primary" asp-action="App2">Proceed To Next Step 1/3</a>
+    </div>
+</div>

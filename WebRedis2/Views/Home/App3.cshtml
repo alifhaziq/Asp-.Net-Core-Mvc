@@ -1,0 +1,271 @@
+﻿@{
+    ViewData["Title"] = "Application3";
+}
+
+<div class="container fluid pb-3 -mt-5">
+    <hr>
+    <h5>Declaration on Foreign Account tax Compliance Act (FATCA)</h5>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <p><b>DECLARATION WHETHER UNITED STATES OF AMERICA ("US") PERSONS</b></p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    I am/ we are <b>NOT</b> a US person/corporation as defined under FATCA.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="usPerson">
+                <label class="form-check-label" for="flexCheckDefault">
+                    I am/ we are a US person/corporation<Span> *</Span>
+                    (I/we understand that I/We must complete form W-9 which can be obtained from AS website (www.apexsecurities.com.my) when I/we trade on US markets.)
+                </label>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <input type="email" class="form-control" id="usIdentificationNumber" placeholder="US Identification Number">
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <input type="email" class="form-control" id="usTaxIdentificationNumber" placeholder="US Taxpayer Identification Number">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="fatcaCheckbox">
+                <label class="form-check-label" for="fatcaCheckbox">
+                    We are a FATCA registered Foreign Financial Institution (FFI).
+                </label>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <input type="email" class="form-control" id="giinInput" placeholder="GIIN">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    We are <b>NOT</b> a FATCA registered Foreign Financial Institution (NFFI).
+                </label>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h5>CRS Self-Certification (Client with Tax Residency Outside of Malaysia)</h5>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <p><b>Declaration of the Tax Residency</b></p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    My taxable income are subject to tax in malaysia ONLY or not subject to tax anywhere.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="taxableIncomeCheckbox">
+                <label class="form-check-label" for="taxableIncomeCheckbox">
+                    My taxable income is subject to tax outside of Malaysia. <b>[Kindly complete and provide the following information required below]</b>
+                </label>
+            </div>
+
+            <div class="tax-info-section" style="display: none;">
+                <div class="col-md-12 col-sm-12">
+                    <p><b><u>1. Taxpayer Identification Number ("TIN")</u></b></p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <input type="email" class="form-control" placeholder="Country of Tax Residence">
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <input type="email" class="form-control" placeholder="TIN">
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <label class="form-label">Please state the reason if the TIN is unobtainable:</label>
+                    <input type="email" class="form-control">
+                </div>
+            </div>
+
+            <div class="tax-info-section" style="display: none;">
+                <div class="col-md-12 col-sm-12">
+                    <p>
+                        <b>
+                            <u>
+                                2. Please enter the legal name of the relevant Entity Account Holder(s) of which you are a controlling Person
+                                (and holding directorship) of more than 25% Shareholder. (IF APPLICABLE).
+                            </u>
+                        </b>
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <label class="form-label">Legally Registered name of <b>Entity </b> </label>
+                    <input type="email" class="form-control">
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <label class="form-label">Shareholder</label>
+                    <input type="email" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-dark" role="alert">
+            <b>Note: </b>if you are not the Account Holder please indicate the capacity<span class="text-danger">*</span> in which you are signing the form
+            (for example 'Authorised Officer'). If signing under a power of attorney please also attach a certified copy of the power of attorney.
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <label class="form-label">Capacity<span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email5">
+        </div>
+    </div>
+    <hr>
+    <h5>Form of Disclosure by client</h5>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <p>I/ We do solemnly declare that the dealings in securities in respect of my/ our trading account shall be conducted :-</p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    <b>For me as principal</b>
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="onBehalfCheckbox">
+                <label class="form-check-label" for="onBehalfCheckbox">
+                    <b>For and on behalf of the party set out below, for whom or on whose behalf the securities are to be dealt with</b>
+                </label>
+
+                <div class="on-behalf-details" style="display: none;">
+                    <div class="col-md-6 col-sm-12">
+                        <label class="form-label">Name of party concerned</label>
+                        <input type="email" class="form-control" id="nameOfParty" placeholder="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <label class="form-label">Company No. /NRIC No /Passport No.</label>
+                        <input type="email" class="form-control" id="partyIdentifier" placeholder="">
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                        <label class="form-label">Correspondence / Registered address</label>
+                        <input type="email" class="form-control" id="partyAddress" placeholder="">
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                        <input type="email" class="form-control" id="additionalInfo" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <p><b><u>Declaration and Agreement by the client</u></b></p>
+
+            <p>
+                I/ We hereby declare that I/We have read and fully understood the terms and conditions for dealing in securities, Declarations, risk and obligations associated with the trading in securities,
+                and/or supplementary terms and conditions as posted on the company website at https://www.apextrade.com/ (which shall include any amendment, variation, modification, supplement, subtitution and
+                replacement made by Apex Securities Berhad from time to time), along with this Securities Trading Account Opening Application Form, collectively referred to as "Agreement", as prescribed at the following.
+            </p>
+
+            <p><b>I/ We confirm that I/We have read and understood the following sections and shall be bound by the terms, conditions and/or requirements in the Agreement, and agree to abide by the same:</b></p>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Risk Disclosure Statement
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Terms & Conditions
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="letOfPled">
+                <label class="form-check-label" for="letOfPled">
+                    Letter of Pledge (for Securitized trading Accounts - STA)
+                </label>
+                <div class="letter-of-Pledge" style="display: none;">
+                    <div class="col-md-12 col-sm-12">
+                        <label class="form-label"></label>
+                        <input type="email" class="form-control" id="additionalInfo" placeholder="Facility Limit Requested (RM)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="setOffAuthorizationCheckbox">
+                <label class="form-check-label" for="setOffAuthorizationCheckbox">
+                    Authorization to Set Off, Lien over Securities And Indemnity (For Collateralised Trading Account - CTA)
+                </label>
+
+                <div class="set-off-authorization-details" style="display: none;">
+                    <div class="col-md-12 col-sm-12">
+                        <label class="form-label"></label>
+                        <input type="email" class="form-control" id="additionalInfo" placeholder="Facility Limit Requested (RM)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Delivery of Electric Contract Notes / Statements
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Letter of Payment Instruction
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Declaration on Politically Exposed Person (PEP)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Declaration on Foreign Currency Securities Trading Facilities
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Declaration on Foreign Account Tax ComplianceAct (FATCA)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    CRS Self-Certification (Client with Tax Residency Outside of Malaysia)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Form of Disclosure bi Client
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    The Company's Privacy Statement (Please refer:www.apexequity.com.my)
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="text-right mt-3">
+        <a type="button" class="btn btn-secondary">Clear</a>
+        <a type="button" href="application3.html" class="btn btn-primary">Submit 3/3</a>
+    </div>
+</div>
