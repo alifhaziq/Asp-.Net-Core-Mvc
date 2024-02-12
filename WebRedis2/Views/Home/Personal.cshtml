@@ -13,12 +13,12 @@
                 <select asp-for="Title" class=" form-select" aria-label="Default select example">
                     <option selected>Title</option>
                     <option value="1">Tan Sri</option>
-                    <option value="1">Dato' Sri</option>
-                    <option value="1">Datuk Sri</option>
-                    <option value="1">Mr.</option>
-                    <option value="1">Miss</option>
-                    <option value="1">Madam</option>
-                    <option value="2">Others</option>
+                    <option value="2">Dato' Sri</option>
+                    <option value="3">Datuk Sri</option>
+                    <option value="4">Mr.</option>
+                    <option value="5">Miss</option>
+                    <option value="6">Madam</option>
+                    <option value="7">Others</option>
                 </select>
             </div>
             <div class="col-md-6 col-sm-12">
@@ -41,37 +41,37 @@
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="cob" placeholder="">
+                    <input asp-for="Cob" type="text" class="form-control" id="cob" placeholder="">
                     <label for="cob" class="form-label">Country of Birth <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="phoneNumber" placeholder="">
+                    <input asp-for="PhoneNumber" type="text" class="form-control" id="phoneNumber" placeholder="">
                     <label for="cob" class="form-label">Phone Number <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="phoneNumber" placeholder="">
+                    <input asp-for="ContactNo" type="text" class="form-control" id="contactNo" placeholder="">
                     <label for="phoneNumber" class="form-label">Contact No (Home/Office) <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="email" placeholder="">
+                    <input asp-for="Email" type="text" class="form-control" id="email" placeholder="">
                     <label for="email" class="form-label">Email address <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-3 col-sm-12">
-                <select class="form-select">
+                <select asp-for="Gender" class="form-select">
                     <option selected>Gender</option>
                     <option value="1">Male</option>
                     <option value="2">Female</option>
                 </select>
             </div>
             <div class="col-md-3 col-sm-12">
-                <select class="form-select" id="national" onchange="toggleForms()">
+                <select asp-for="Nationality" class="form-select" id="national" onchange="toggleForms()">
                     <option selected>Nationality</option>
                     <option value="1">Malaysia</option>
                     <option value="2">Others</option>
@@ -81,7 +81,7 @@
                 <input type="text" class="form-control" id="other" placeholder="Other, Please Specify" style="display: none;">
             </div>
             <div class="col-md-3 col-sm-12">
-                <select class="form-select" id="maritalStatus" onchange="toggleInputFields()">
+                <select asp-for="Martial" class="form-select" id="maritalStatus" onchange="toggleInputFields()">
                     <option selected>Martial Status</option>
                     <option value="1">Single</option>
                     <option value="2">Married</option>
@@ -96,37 +96,37 @@
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="address1" placeholder="">
+                    <input asp-for="Address1" type="text" class="form-control" id="address1" placeholder="">
                     <label for="address1" class="form-label">Address 1<span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="address2" placeholder="">
+                    <input asp-for="Address2" type="text" class="form-control" id="address2" placeholder="">
                     <label for="address2" class="form-label">Address 2<span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="postcode" placeholder="">
+                    <input asp-for="Postcode" type="text" class="form-control" id="postcode" placeholder="">
                     <label for="postcode" class="form-label">PostCode <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="town" placeholder="">
+                    <input asp-for="Address2" type="text" class="form-control" id="town" placeholder="">
                     <label for="town" class="form-label">Town <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="state" placeholder="">
+                    <input asp-for="State" type="text" class="form-control" id="state" placeholder="">
                     <label for="state" class="form-label">State <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="country" placeholder="">
+                    <input asp-for="Country" type="text" class="form-control" id="country" placeholder="">
                     <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
                 </div>
             </div>
@@ -137,50 +137,50 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="fullname" placeholder="">
-                    <label for="fullname" class="form-label">FullName <span class="text-danger"></span></label>
+                    <input asp-for="SpouseName" type="text" class="form-control" id="spouseName" placeholder="">
+                    <label for="spouseName" class="form-label">FullName <span class="text-danger"></span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">New / Old NRIC <span class="text-danger"></span></label>
+                    <input asp-for="SpouseNric" type="text" class="form-control" id="spouseNric" placeholder="">
+                    <label for="spouseNric" class="form-label">New / Old NRIC <span class="text-danger"></span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Name of Employer <span class="text-danger"></span></label>
+                    <input asp-for="Employer" type="text" class="form-control" id="employer" placeholder="">
+                    <label for="employer" class="form-label">Name of Employer <span class="text-danger"></span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Occupation <span class="text-danger"></span></label>
+                    <input asp-for="Occupation" type="text" class="form-control" id="occupation" placeholder="">
+                    <label for="occupation" class="form-label">Occupation <span class="text-danger"></span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Phone Number <span class="text-danger"></span></label>
+                    <input asp-for="SpousePhoneNumber" type="text" class="form-control" id="spouseNumberPhone" placeholder="">
+                    <label for="spouseNumberPhone" class="form-label">Phone Number <span class="text-danger"></span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">No. Year In Service <span class="text-danger"></span></label>
+                    <input asp-for="ServiceYear" type="text" class="form-control" id="yearService" placeholder="">
+                    <label for="yearService" class="form-label">No. Year In Service <span class="text-danger"></span></label>
                 </div>
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Employer's Address 1 <span class="text-danger"></span></label>
+                    <input asp-for="SpouseAddress1" type="text" class="form-control" id="address1" placeholder="">
+                    <label for="address1" class="form-label">Employer's Address 1 <span class="text-danger"></span></label>
                 </div>
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Employer's Address 2 <span class="text-danger"></span></label>
+                    <input asp-for="SpouseAddress2" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">Employer's Address 2 <span class="text-danger"></span></label>
                 </div>
             </div>
         </div>
@@ -190,48 +190,48 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Name Of Employer / Business <span class="text-danger">*</span></label>
+                    <input asp-for="EmploymentName" type="text" class="form-control" id="employmentName" placeholder="">
+                    <label for="employmentName" class="form-label">Name Of Employer / Business <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Employer's Nature of Business <span class="text-danger">*</span></label>
+                    <input asp-for="Nature" type="text" class="form-control" id="nature" placeholder="">
+                    <label for="nature" class="form-label">Employer's Nature of Business <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Address 1 <span class="text-danger">*</span></label>
+                    <input asp-for="EmploymentAddress1" type="text" class="form-control" id="address1" placeholder="">
+                    <label for="addrees1" class="form-label">Address 1 <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Address 2 <span class="text-danger">*</span></label>
+                    <input asp-for="EmploymentAddress2" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">Address 2 <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-2 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Position Held <span class="text-danger">*</span></label>
+                    <input asp-for="PositionHeld" type="text" class="form-control" id="positionHeld" placeholder="">
+                    <label for="positionHeld" class="form-label">Position Held <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-2 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">No.Year In Service <span class="text-danger">*</span></label>
+                    <input asp-for="EmploymentServiceYear" type="text" class="form-control" id="employmentYearService" placeholder="">
+                    <label for="employmentYearService" class="form-label">No.Year In Service <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-8 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Current estimated market value of residence (if own property): RM <span class="text-danger">*</span></label>
+                    <input asp-for="MarketValue" type="text" class="form-control" id="marketValue" placeholder="">
+                    <label for="marketValue" class="form-label">Current estimated market value of residence (if own property): RM <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-3 col-sm-12">
-                <select class="form-select" aria-label="Default select example">
+                <select asp-for="AnnualIncome" class="form-select" aria-label="Default select example">
                     <option selected>Gross Annual Income (RM)</option>
                     <option value="1">RM20,000 and below</option>
                     <option value="2">RM20,001 - RM40,000</option>
@@ -244,7 +244,7 @@
                 </select>
             </div>
             <div class="col-md-3 col-sm-12">
-                <select class="form-select" aria-label="Default select example">
+                <select asp-for="Funds" class="form-select" aria-label="Default select example">
                     <option selected>Source of Funds</option>
                     <option value="1">Employment</option>
                     <option value="2">Savings</option>
@@ -253,7 +253,7 @@
                 </select>
             </div>
             <div class="col-md-3 col-sm-12">
-                <select class="form-select" aria-label="Default select example">
+                <select asp-for="NetWorth" class="form-select" aria-label="Default select example">
                     <option selected>Estimated Net Worth</option>
                     <option value="1">RM50,000 and below</option>
                     <option value="2">RM50,001 - RM100,000</option>
@@ -265,7 +265,7 @@
                 </select>
             </div>
             <div class="col-md-3 col-sm-12">
-                <select class="form-select" aria-label="Default select example">
+                <select asp-for="SourceWealth" class="form-select" aria-label="Default select example">
                     <option selected>Source of Wealth</option>
                     <option value="1">Employment</option>
                     <option value="2">Inheritance</option>
@@ -279,7 +279,7 @@
         <hr>
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <select class="form-select" aria-label="Default select example">
+                <select asp-for="AccountType" class="form-select" aria-label="Default select example">
                     <option selected>Account Type</option>
                     <option value="1">Saving Account</option>
                     <option value="2">Current Account</option>
@@ -287,14 +287,14 @@
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Bank Name <span class="text-danger">*</span></label>
+                    <input asp-for="BankName" type="text" class="form-control" id="bankName" placeholder="">
+                    <label for="bankName" class="form-label">Bank Name <span class="text-danger">*</span></label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input">
-                    <input type="text" class="form-control" id="nric" placeholder="">
-                    <label for="nric" class="form-label">Account No. <span class="text-danger">*</span></label>
+                    <input asp-for="NoAccount" type="text" class="form-control" id="accountNumber" placeholder="">
+                    <label for="accountNumber" class="form-label">Account No. <span class="text-danger">*</span></label>
                 </div>
             </div>
         </div>

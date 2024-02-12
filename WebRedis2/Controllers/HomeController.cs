@@ -64,7 +64,7 @@ namespace WebRedis2.Controllers
         public IActionResult App3(Application3 model)
         {
             _redisConnection.GetDatabase().StringSet("user:application3", JsonConvert.SerializeObject(model));
-            return RedirectToAction("App3");
+            return RedirectToAction();
         }
 
         public IActionResult FinalStep()

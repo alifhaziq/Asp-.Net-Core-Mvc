@@ -1,15 +1,17 @@
-﻿@{
+﻿@model Application2;
+@{
     ViewData["Title"] = "Application2";
 }
 
 <div class="container fluid pb-3 -mt-5">
+    <form asp-action="App2" method="post">
     <hr>
     <h5>Other Information</h5>
     <hr>
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <p><b>1.</b> What is your investment objective in dealing securities?</p>
-            <select class="form-select" id="purposeSelect" onchange="toggleOtherInput()">
+            <select asp-for="Other1" class="form-select" id="purposeSelect" onchange="toggleOtherInput()">
                 <option selected>Please Choose</option>
                 <option value="1">Trading</option>
                 <option value="2">Investment</option>
@@ -22,20 +24,20 @@
 
         <div class="col-md-6 col-sm-12">
             <p><b>2.</b> Do you have any experience and knowledge in securities trading?</p>
-            <select class="form-select">
+                <select asp-for="Experience" class="form-select">
                 <option selected>Please Choose</option>
-                <option value="1">No experience / knowledge</option>
-                <option value="2">Limited experience</option>
-                <option value="3">Experience ( > 3 years)</option>
+                <option value="no">No experience / knowledge</option>
+                <option value="limited">Limited experience</option>
+                <option value="> 3 years">Experience ( > 3 years)</option>
             </select>
         </div>
 
         <div class="col-md-6 col-sm-12">
             <p class="params"><b>3.</b> Existing account with Apex Securities Berhad?</p>
-            <select class="form-select" id="existing" onchange="toggleInput()">
+            <select asp-for="Other3" class="form-select" id="existing" onchange="toggleInput()">
                 <option selected>Please Choose</option>
-                <option value="1">Yes</option>
-                <option value="2">No</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
             </select>
             <br>
             <input type="text" class="form-control" id="NoAcc" placeholder="Account No" style="display: none;">
@@ -46,9 +48,9 @@
                 <b>4.</b> Any trading account maintained with other participating organisation of bursa malaysia securities berhad?
                 (if yes, please specify name of the participating organisation)
             </p>
-        </div>
+        </div>       
         <div class="col-md-12 col-sm-12">
-            <input type="email" class="form-control" id="email2">
+            <input asp-for="Other4" type="text" class="form-control" id="otherInfo4">
         </div>
         <div class="col-md-12 col-sm-12">
             <p>
@@ -58,13 +60,13 @@
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder=" ">
+                <input asp-for="Other5Name" type="text" class="form-control" id="fullname" placeholder=" ">
                 <label for="fullname" class="form-label">Name <span class="text-danger">*</span></label>
             </div>
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder=" ">
+                <input asp-for="Other5Relationship "type="text" class="form-control" id="fullname" placeholder=" ">
                 <label for="fullname" class="form-label">Relationship <span class="text-danger">*</span></label>
             </div>
         </div>
@@ -80,19 +82,19 @@
         </div>
         <div class="col-md-4 col-sm-12">
             <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder=" ">
+                <input asp-for="Other6Name"  type="text" class="form-control" id="fullname" placeholder=" ">
                 <label for="fullname" class="form-label">Name of Related person <span class="text-danger">*</span></label>
             </div>
         </div>
         <div class="col-md-4 col-sm-12">
             <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder=" ">
+                <input asp-for="Other6Account" type="text" class="form-control" id="fullname" placeholder=" ">
                 <label for="fullname" class="form-label">Trading Account Number <span class="text-danger">*</span></label>
             </div>
         </div>
         <div class="col-md-4 col-sm-12">
             <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder=" ">
+                <input asp-for="Other6Relationship" type="text" class="form-control" id="fullname" placeholder=" ">
                 <label for="fullname" class="form-label">Relationship <span class="text-danger">*</span></label>
             </div>
         </div>
@@ -106,10 +108,10 @@
                 I/ We refer to the opening of the trading account with you, APEX SECURITIES BHD and wish to request you to issue an deliver my daily
                 and monthly statement/ custody statement in the following manner:
             </p>
-            <select class="form-select" id="purposeSelect" onchange="toggleOtherInput()">
-                <option selected>Mode of Delivery</option>
-                <option value="1">E-mail</option>
-                <option value="2">Website</option>
+            <select asp-for="DeliveryMode" class="form-select" id="purposeSelect" onchange="toggleOtherInput()">
+                <option  selected>Mode of Delivery</option>
+                <option value="email">E-mail</option>
+                <option value="website">Website</option>
             </select>
         </div>
     </div>
@@ -124,21 +126,21 @@
             </p>
         </div>
         <div class="col-md-12 col-sm-12">
-            <select class="form-select" aria-label="Default select example">
+            <select asp-for="AccountType" class="form-select" aria-label="Default select example">
                 <option selected>Account Type</option>
-                <option value="1">Saving Account</option>
-                <option value="2">Current Account</option>
+                    <option value="Saving">Saving Account</option>
+                    <option value="Current">Current Account</option>
             </select>
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="input">
-                <input type="text" class="form-control" id="nric" placeholder="">
+                <input asp-for="BankName" type="text" class="form-control" id="nric" placeholder="">
                 <label for="nric" class="form-label">Bank Name <span class="text-danger">*</span></label>
             </div>
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="input">
-                <input type="text" class="form-control" id="nric" placeholder="">
+                <input asp-for="BankAccount" type="text" class="form-control" id="nric" placeholder="">
                 <label for="nric" class="form-label">Account No. <span class="text-danger">*</span></label>
             </div>
         </div>
@@ -150,22 +152,22 @@
         <div class="col-md-3 col-sm-12">
             <p>Declaration whether a PEP <span class="text-danger">*</span></p>
 
-            <select class="form-select" id="Decpep" onchange="togglePEP()">
+            <select asp-for="Pep" class="form-select" id="pep" onchange="togglePEP()">
                 <option selected>Please Choose</option>
-                <option value="1">Yes</option>
-                <option value="2">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
             </select>
 
-            <select class="form-select" id="statusPEP" style="display: none;">
+            <select asp-for="StatusPep" class="form-select" id="statusPEP" style="display: none;">
                 <option selected>Status of PEP</option>
-                <option value="1">A Local PEP</option>
-                <option value="2">A Foreign PEP</option>
+                    <option value="Local">A Local PEP</option>
+                    <option value="Foreign">A Foreign PEP</option>
             </select>
 
-            <select class="form-select" id="relationshipPEP" style="display: none;">
+            <select asp-for="RelationshipPep" class="form-select" id="relationshipPEP" style="display: none;">
                 <option selected aria-readonly="true">Relationship with PEP</option>
-                <option value="1">Is a close associate to a local PEP</option>
-                <option value="2">Is a close associate to a foreign PEP</option>
+                    <option value="local PEP">Is a close associate to a local PEP</option>
+                    <option value="foreign PEP">Is a close associate to a foreign PEP</option>
             </select>
         </div>
     </div>
@@ -179,10 +181,10 @@
                 In order to comply with the BNM FEA, I/we do solemnly and sincerely declare and affirm as follows <span class="text-danger">*</span>
             </p>
 
-            <select class="form-select" id="Dec" onchange="toggleCheckboxes()">
-                <option selected>Please Choose</option>
-                <option value="1">I/We am/are resident of Malaysia</option>
-                <option value="2">I/We am/are non-resident of Malaysia</option>
+            <select asp-for="Declaration" class="form-select" id="Dec" onchange="toggleCheckboxes()">
+                <option  selected>Please Choose</option>
+                    <option value="resident">I/We am/are resident of Malaysia</option>
+                    <option value="non-resident">I/We am/are non-resident of Malaysia</option>
             </select>
 
             <div class="form-check" id="checkboxContainer" style="display: none;">
@@ -202,6 +204,7 @@
     </div>
     <div class="text-right mt-3">
         <a type="button" href="" class="btn btn-secondary">Clear</a>
-        <a type="button" asp-action="App3" class="btn btn-primary">Proceed To Next Step 2/3</a>
+        <button type="submit" class="btn btn-primary">Proceed To Next Step 2/3</button>
     </div>
+    </form>
 </div>

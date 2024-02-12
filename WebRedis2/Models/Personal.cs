@@ -35,7 +35,7 @@
         public string Nature { get; set; } = string.Empty;
         public string EmploymentAddress1 { get; set; } = string.Empty;
         public string EmploymentAddress2 { get; set; } = string.Empty;
-        public string Position { get; set; } = string.Empty;
+        public string PositionHeld { get; set; } = string.Empty;
         public int EmploymentServiceYear { get; set; }
         public double MarketValue { get; set; }
         public string AnnualIncome { get; set; } = string.Empty;
