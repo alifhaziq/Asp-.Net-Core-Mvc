@@ -11,11 +11,30 @@ namespace WebRedis2.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConnectionMultiplexer _redisConnection;
-        
-        public HomeController(ILogger<HomeController> logger, IConnectionMultiplexer connection)
+        private readonly IDictionary<string, object> _sessionStorage;
+
+        private string GetUserSessionId()
+        {
+            const string cookieName = "UserSessionId";
+            if (!HttpContext.Request.Cookies.TryGetValue(cookieName, out var userSessionId))
+            {
+                userSessionId = Guid.NewGuid().ToString();
+                var cookieOptions = new CookieOptions
+                {
+                    Expires = DateTime.Now.AddDays(1),
+                    HttpOnly = true,
+                    SameSite = SameSiteMode.Strict
+                };
+                HttpContext.Response.Cookies.Append(cookieName, userSessionId, cookieOptions);
+            }
+            return userSessionId;
+        }
+
+        public HomeController(ILogger<HomeController> logger, IConnectionMultiplexer connection, IDictionary<string, object> sessionStorage)
         {
             _redisConnection = connection;
             _logger = logger;
+            _sessionStorage = sessionStorage;
         }
 
         public IActionResult Personal()
@@ -26,7 +45,9 @@ namespace WebRedis2.Controllers
         [HttpPost]
         public IActionResult Personal(Personal model)
         {
-            _redisConnection.GetDatabase().StringSet("user:personal", JsonConvert.SerializeObject(model));
+            //_redisConnection.GetDatabase().StringSet("user:personal", JsonConvert.SerializeObject(model));
+            var sessionId = GetUserSessionId();
+            _sessionStorage[$"user:personal:{sessionId}"] = JsonConvert.SerializeObject(model);
             return RedirectToAction("App2");
         }
 
@@ -38,7 +59,9 @@ namespace WebRedis2.Controllers
         [HttpPost]
         public IActionResult Corprate(Corprate model)
         {
-            _redisConnection.GetDatabase().StringSet("user:corprate", JsonConvert.SerializeObject(model));
+            //_redisConnection.GetDatabase().StringSet("user:corporate", JsonConvert.SerializeObject(model));
+            var sessionId = GetUserSessionId();
+            _sessionStorage[$"user:corporate:{sessionId}"] = JsonConvert.SerializeObject(model);
             return RedirectToAction("App2");
         }
 
@@ -50,7 +73,9 @@ namespace WebRedis2.Controllers
         [HttpPost]
         public IActionResult App2(Application2 model)
         {
-            _redisConnection.GetDatabase().StringSet("user:application2", JsonConvert.SerializeObject(model));
+            //_redisConnection.GetDatabase().StringSet("user:application2", JsonConvert.SerializeObject(model));
+            var sessionId = GetUserSessionId();
+            _sessionStorage[$"user:application2:{sessionId}"] = JsonConvert.SerializeObject(model);
             return RedirectToAction("App3");
         }
 
@@ -68,9 +93,16 @@ namespace WebRedis2.Controllers
 
         public IActionResult FinalStep()
         {
-            var model = JsonConvert.DeserializeObject<Personal>(_redisConnection.GetDatabase().StringGet("user:personal"));
-            var step2Data = JsonConvert.DeserializeObject<Application2>(_redisConnection.GetDatabase().StringGet("user:application2"));
-            var step3Data = JsonConvert.DeserializeObject<Application2>(_redisConnection.GetDatabase().StringGet("user:application3"));
+            //var model = JsonConvert.DeserializeObject<Personal>(_redisConnection.GetDatabase().StringGet("user:personal"));
+            //var step2Data = JsonConvert.DeserializeObject<Application2>(_redisConnection.GetDatabase().StringGet("user:application2"));
+            //var step3Data = JsonConvert.DeserializeObject<Application2>(_redisConnection.GetDatabase().StringGet("user:application3"));
+            var sessionId = GetUserSessionId();
+            var modelJson = _sessionStorage[$"user:personal:{sessionId}"] as string;
+            var corporateJson = _sessionStorage[$"user:corporate:{sessionId}"] as string;
+            var application2Json = _sessionStorage[$"user:application2:{sessionId}"] as string;
+            var application3Json = _sessionStorage[$"user:application3:{sessionId}"] as string;
+            var model = JsonConvert.DeserializeObject<Personal>(modelJson);
+            var corporate = JsonConvert.DeserializeObject<Corprate>(corporateJson);
             return View();
         }
 

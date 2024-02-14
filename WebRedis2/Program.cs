@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 var conn = builder.Configuration["RedisConnection"];
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(builder.Configuration["RedisConnection"]));
+builder.Services.AddSingleton<IDictionary<string, object>>(new Dictionary<string, object>());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
