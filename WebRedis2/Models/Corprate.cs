@@ -17,10 +17,6 @@
         public string Town { get; set; } = string.Empty;
         public string State { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
-    }
-
-    public class CorprateInformation
-    {
         public string TypeOrganisation { get; set; } = string.Empty;
         public string Nature { get; set; } = string.Empty;
         public double PaidCapital { get; set; }
@@ -28,12 +24,9 @@
         public string ShareHolder { get; set; } = string.Empty;
         public DateTime DateShareHodlder { get; set; }
         public double ProfitLoss { get; set; }
-    }
-
-    public class CorprateBank
-    {
+        public DateTime DateProfitLoss { get; set; } 
         public string AccountType { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;    
+        public string BankName { get; set; } = string.Empty;
         public int NoAccount { get; set; }
     }
 }

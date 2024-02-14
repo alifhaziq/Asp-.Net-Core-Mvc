@@ -1,11 +1,12 @@
-﻿.btn {
-    border-radius: 10px;
-}
-
+﻿
 /* Heading */
 .h5 {
     margin: 15px;
     padding-top: 10px; /* Reduce padding */
+}
+
+.btn {
+    border-radius: 10px
 }
 
 .form-control {

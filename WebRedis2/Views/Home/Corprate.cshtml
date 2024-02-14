@@ -1,189 +1,191 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@model Corprate;
+@{
+    ViewData["Title"] = "Coprate App";
 }
 <div class="container fluid pb-3 -mt-5">
-    <hr>
-    <h5>Corprate / Institutional Investors</h5>
-    <hr>
-    <div class="row">
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder="">
-                <label for="fullname" class="form-label">Name of Entity / Company <span class="text-danger">*</span></label>
+    <form asp-action="Personal" method="post">
+        <hr>
+        <h5>Corprate / Institutional Investors</h5>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="Name" type="text" class="form-control" id="fullname" placeholder="">
+                    <label for="fullname" class="form-label">Name of Entity / Company <span class="text-danger">*</span></label>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder="">
-                <label for="fullname" class="form-label">Entity / Company Registration No. <span class="text-danger">*</span></label>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="RegisterationNo" type="text" class="form-control" id="fullname" placeholder="">
+                    <label for="fullname" class="form-label">Entity / Company Registration No. <span class="text-danger">*</span></label>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder="">
-                <label for="fullname" class="form-label">Country of Origin / Registration <span class="text-danger">*</span></label>
+            <div class="col-md-4 col-sm-12">
+                <div class="input">
+                    <input asp-for="CountryOrigin" type="text" class="form-control" id="fullname" placeholder="">
+                    <label for="fullname" class="form-label">Country of Origin / Registration <span class="text-danger">*</span></label>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder="">
-                <label for="fullname" class="form-label">Date of Incorporation <span class="text-danger">*</span></label>
+            <div class="col-md-4 col-sm-12">
+                <div class="input">
+                    <input asp-for="Date" type="text" class="form-control" id="fullname" placeholder="">
+                    <label for="fullname" class="form-label">Date of Incorporation <span class="text-danger">*</span></label>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder="">
-                <label for="fullname" class="form-label">Contact No.Phone <span class="text-danger">*</span></label>
+            <div class="col-md-4 col-sm-12">
+                <div class="input">
+                    <input asp-for="NoPhone" type="text" class="form-control" id="fullname" placeholder="">
+                    <label for="fullname" class="form-label">Contact No.Phone <span class="text-danger">*</span></label>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder="">
-                <label for="fullname" class="form-label">Contact No.Fax <span class="text-danger">*</span></label>
+            <div class="col-md-4 col-sm-12">
+                <div class="input">
+                    <input asp-for="NoFax" type="text" class="form-control" id="fullname" placeholder="">
+                    <label for="fullname" class="form-label">Contact No.Fax <span class="text-danger">*</span></label>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder="">
-                <label for="fullname" class="form-label">Contact Person <span class="text-danger">*</span></label>
+            <div class="col-md-4 col-sm-12">
+                <div class="input">
+                    <input asp-for="ContactPerson" type="text" class="form-control" id="fullname" placeholder="">
+                    <label for="fullname" class="form-label">Contact Person <span class="text-danger">*</span></label>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="fullname" placeholder="">
-                <label for="fullname" class="form-label">Email Address <span class="text-danger">*</span></label>
+            <div class="col-md-4 col-sm-12">
+                <div class="input">
+                    <input asp-for="EmailAddress" type="text" class="form-control" id="fullname" placeholder="">
+                    <label for="fullname" class="form-label">Email Address <span class="text-danger">*</span></label>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <select id="nationality" class="form-select">
-                <option selected>Nationality</option>
-                <option value="malaysia">Malaysia</option>
-                <option value="other">Others</option>
-            </select>
-        </div>
+            <div class="col-md-6 col-sm-12">
+                <select asp-for="Nationality" id="nationality" class="form-select">
+                    <option selected>Nationality</option>
+                    <option value="malaysia">Malaysia</option>
+                    <option value="other">Others</option>
+                </select>
+            </div>
 
-        <div class="col-md-12 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="address1" placeholder="">
-                <label for="address1" class="form-label">Address 1<span class="text-danger">*</span></label>
+            <div class="col-md-12 col-sm-12">
+                <div class="input">
+                    <input asp-for="Address1" type="text" class="form-control" id="address1" placeholder="">
+                    <label for="address1" class="form-label">Address 1<span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <div class="input">
+                    <input asp-for="Address2" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">Address 2<span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="PostCode" type="text" class="form-control" id="postcode" placeholder="">
+                    <label for="postcode" class="form-label">PostCode <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="Town" type="text" class="form-control" id="town" placeholder="">
+                    <label for="town" class="form-label">Town <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="State" type="text" class="form-control" id="state" placeholder="">
+                    <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="Country" type="text" class="form-control" id="country" placeholder="">
+                    <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
+                </div>
             </div>
         </div>
-        <div class="col-md-12 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="address2" placeholder="">
-                <label for="address2" class="form-label">Address 2<span class="text-danger">*</span></label>
+        <hr>
+        <h5>Corprate Information</h5>
+        <hr>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <select asp-for="TypeOrganisation" class="form-select" aria-label="Default select example">
+                    <option selected>Type of Organisation</option>
+                    <option value="Private">Private Company</option>
+                    <option value="Public">Public Company</option>
+                    <option value="GLC">GLC</option>
+                    <option value="Institution">Institution</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <div class="input">
+                    <input asp-for="Nature" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">Nature Of Business <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="PaidCapital" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">Paid-up Capital (RM) <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="DateCapital" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">As At (Date) <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="ShareHolder" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">Shareholder Funds <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="DateShareHodlder" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">As At (Date) <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="ProfitLoss" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">Latest Profit & Loss (RM) <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="DateProfitLoss" type="text" class="form-control" id="address2" placeholder="">
+                    <label for="address2" class="form-label">As At (Date) <span class="text-danger">*</span></label>
+                </div>
             </div>
         </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="postcode" placeholder="">
-                <label for="postcode" class="form-label">PostCode <span class="text-danger">*</span></label>
+        <hr>
+        <h5>Bank Particulars (for e-transaction payment purposes)</h5>
+        <hr>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <select asp-for="AccountType" class="form-select" aria-label="Default select example">
+                    <option selected>Account Type</option>
+                    <option value="Current">Current Account</option>
+                    <option value="Overdraft">Overdraft</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="BankName" type="text" class="form-control" id="nric" placeholder="">
+                    <label for="nric" class="form-label">Bank Name <span class="text-danger">*</span></label>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input">
+                    <input asp-for="NoAccount" type="text" class="form-control" id="nric" placeholder="">
+                    <label for="nric" class="form-label">Account No. <span class="text-danger">*</span></label>
+                </div>
             </div>
         </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="town" placeholder="">
-                <label for="town" class="form-label">Town <span class="text-danger">*</span></label>
-            </div>
+        <div class="text-right mt-3">
+            <a type="button" class="btn btn-secondary">Clear</a>
+            <button type="submit" class="btn btn-primary">Proceed To Next Step 1/3</button>
         </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="state" placeholder="">
-                <label for="state" class="form-label">State <span class="text-danger">*</span></label>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="country" placeholder="">
-                <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <h5>Corprate Information</h5>
-    <hr>
-    <div class="row">
-        <div class="col-md-12 col-sm-12">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Type of Organisation</option>
-                <option value="1">Private Company</option>
-                <option value="2">Public Company</option>
-                <option value="3">GLC</option>
-                <option value="4">Institution</option>
-                <option value="5">Others</option>
-            </select>
-        </div>
-        <div class="col-md-12 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="address2" placeholder="">
-                <label for="address2" class="form-label">Nature Of Business <span class="text-danger">*</span></label>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="address2" placeholder="">
-                <label for="address2" class="form-label">Paid-up Capital (RM) <span class="text-danger">*</span></label>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="address2" placeholder="">
-                <label for="address2" class="form-label">As At (Date) <span class="text-danger">*</span></label>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="address2" placeholder="">
-                <label for="address2" class="form-label">Shareholder Funds <span class="text-danger">*</span></label>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="address2" placeholder="">
-                <label for="address2" class="form-label">As At (Date) <span class="text-danger">*</span></label>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="address2" placeholder="">
-                <label for="address2" class="form-label">Latest Profit & Loss (RM) <span class="text-danger">*</span></label>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="address2" placeholder="">
-                <label for="address2" class="form-label">As At (Date) <span class="text-danger">*</span></label>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <h5>Bank Particulars (for e-transaction payment purposes)</h5>
-    <hr>
-    <div class="row">
-        <div class="col-md-12 col-sm-12">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Account Type</option>
-                <option value="1">Current Account</option>
-                <option value="2">Overdraft</option>
-                <option value="3">Others</option>
-            </select>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="nric" placeholder="">
-                <label for="nric" class="form-label">Bank Name <span class="text-danger">*</span></label>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="input">
-                <input type="text" class="form-control" id="nric" placeholder="">
-                <label for="nric" class="form-label">Account No. <span class="text-danger">*</span></label>
-            </div>
-        </div>
-    </div>
-    <div class="text-right mt-3">
-        <a type="button" class="btn btn-secondary">Clear</a>
-        <a type="button" asp-action="App2" class="btn btn-primary">Proceed To Next Step 1/3</a>
-    </div>
+    </form>
 </div>
-    </div>
