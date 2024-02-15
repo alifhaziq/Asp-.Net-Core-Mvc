@@ -12,41 +12,41 @@
             <div class="col-md-12 col-sm-12">
                 <p><b>DECLARATION WHETHER UNITED STATES OF AMERICA ("US") PERSONS</b></p>
                 <div class="form-check">
-                    <input value="Not US person" class="form-check-input" type="checkbox" id="notUsPerson">
-                    <label class="form-check-label" for="flexCheckDefault" for="notUsPerson">
+                    <input class="form-check-input" type="radio" name="fatca" id="notUsPerson">
+                    <label class="form-check-label" for="notUsPerson">
                         I am/ we are <b>NOT</b> a US person/corporation as defined under FATCA.
                     </label>
                 </div>
 
                 <div class="form-check">
-                    <input value="US person" class="form-check-input" type="checkbox" id="usPerson" onchange="UsPersonFields()">
+                    <input class="form-check-input" type="radio" name="fatca" id="usPerson" onchange="UsPersonFields()">
                     <label class="form-check-label" for="usPerson">
                         I am/ we are a US person/corporation<span>*</span>
                         (I/we understand that I/We must complete form W-9 which can be obtained from AS website (www.apexsecurities.com.my) when I/we trade on US markets.)
                     </label>
                 </div>
-                
+
                 <div class="col-md-6 col-sm-12" id="usIdentificationNumberContainer" style="display: none;">
-                    <input type="email" class="form-control" id="usIdentificationNumber" placeholder="US Identification Number">
+                    <input asp-for="UsIDNo" type="text" class="form-control" id="usIdentificationNumber" placeholder="US Identification Number">
                 </div>
 
                 <div class="col-md-6 col-sm-12" id="usTaxIdentificationNumberContainer" style="display: none;">
-                    <input type="email" class="form-control" id="usTaxIdentificationNumber" placeholder="US Taxpayer Identification Number">
+                    <input asp-for="UsTaxPay" type="text" class="form-control" id="usTaxIdentificationNumber" placeholder="US Taxpayer Identification Number">
                 </div>
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="fatcaForeign" onchange="FatcaFields()">
+                    <input class="form-check-input" type="radio" name="fatca" id="fatcaForeign" onchange="FatcaFields()">
                     <label class="form-check-label" for="fatcaCheckbox">
                         We are a FATCA registered Foreign Financial Institution (FFI).
                     </label>
                 </div>
                 
                 <div class="col-md-6 col-sm-12">
-                    <input type="text" class="form-control" id="giinInput" placeholder="GIIN" style="display: none;">
+                    <input asp-for="Giin" type="text" class="form-control" id="giinInput" placeholder="GIIN" style="display: none;">
                 </div>
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" >
+                    <input class="form-check-input" type="radio" name="fatca" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         We are <b>NOT</b> a FATCA registered Foreign Financial Institution (NFFI).
                     </label>
@@ -60,14 +60,14 @@
             <div class="col-md-12 col-sm-12">
                 <p><b>Declaration of the Tax Residency</b></p>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        My taxable income are subject to tax in malaysia ONLY or not subject to tax anywhere.
+                    <input class="form-check-input" type="radio" name="crsSelf" id="fatcaForeign">
+                    <label class="form-check-label" for="fatcaCheckbox">
+                        My taxable income are subject to tax in Malaysia ONLY or not subject to tax anywhere.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="outsideMalaysia" onchange="crsFields()">
-                    <label class="form-check-label" for="taxableIncomeCheckbox">
+                    <input class="form-check-input" type="radio" id="outsideMalaysia" name="crsSelf" onchange="crsFields()">
+                    <label class="form-check-label" for="outsideMalaysia">
                         My taxable income is subject to tax outside of Malaysia. <b>[Kindly complete and provide the following information required below]</b>
                     </label>
                 </div>
@@ -77,14 +77,14 @@
                         <p><b><u>1. Taxpayer Identification Number ("TIN")</u></b></p>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <input type="email" class="form-control" placeholder="Country of Tax Residence">
+                        <input asp-for="CountryTax" type="text" class="form-control" placeholder="Country of Tax Residence">
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <input type="email" class="form-control" placeholder="TIN">
+                        <input asp-for="Tin" type="text" class="form-control" placeholder="TIN">
                     </div>
                     <div class="col-md-12 col-sm-12">
                         <label class="form-label">Please state the reason if the TIN is unobtainable:</label>
-                        <input type="email" class="form-control">
+                        <input asp-for="ReasonTin" type="text" class="form-control">
                     </div>
                 </div>
 
@@ -101,11 +101,11 @@
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label class="form-label">Legally Registered name of <b>Entity </b></label>
-                        <input type="email" class="form-control">
+                        <input asp-for="Legally" type="text" class="form-control">
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label class="form-label">Shareholder</label>
-                        <input type="email" class="form-control">
+                        <input asp-for="ShareHolder" type="text" class="form-control">
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
 
             <div class="col-md-12 col-sm-12">
                 <label class="form-label">Capacity<span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="email5">
+                <input asp-for="Capacity" type="text" class="form-control" id="capacitys">
             </div>
 
         </div>
@@ -131,14 +131,14 @@
 
                 <p>I/ We do solemnly declare that the dealings in securities in respect of my/ our trading account shall be conducted :-</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="radio" name="disclosureClient" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         <b>For me as principal</b>
                     </label>
                 </div>
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="disclosure" onchange="DisclosureFields()">
+                    <input class="form-check-input" type="radio" name="disclosureClient" id="disclosure" onchange="DisclosureFields()">
                     <label class="form-check-label" for="onBehalfCheckbox">
                         <b>For and on behalf of the party set out below, for whom or on whose behalf the securities are to be dealt with</b>
                     </label>
@@ -146,21 +146,21 @@
                     <div class="on-behalf-details" id="DisclosureInput" style="display: none;">
                         <div class="col-md-6 col-sm-12">
                             <label class="form-label">Name of party concerned</label>
-                            <input type="email" class="form-control" id="nameOfParty" placeholder="">
+                            <input asp-for="Name" type="email" class="form-control" id="nameOfParty" placeholder="">
                         </div>
 
                         <div class="col-md-6 col-sm-12">
                             <label class="form-label">Company No. /NRIC No /Passport No.</label>
-                            <input type="email" class="form-control" id="partyIdentifier" placeholder="">
+                            <input asp-for="CompanyNo" type="text" class="form-control" id="partyIdentifier" placeholder="">
                         </div>
 
                         <div class="col-md-12 col-sm-12">
                             <label class="form-label">Correspondence / Registered address</label>
-                            <input type="email" class="form-control" id="partyAddress" placeholder="">
+                            <input asp-for="RegisteredAddress" type="text" class="form-control" id="partyAddress" placeholder="">
                         </div>
 
                         <div class="col-md-12 col-sm-12">
-                            <input type="email" class="form-control" id="additionalInfo" placeholder="">
+                            <input asp-for="RegisteredAddress" type="text" class="form-control" id="additionalInfo" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -276,7 +276,6 @@
             </div>
         </div>
         <div class="text-right mt-3">
-            <a type="button" class="btn btn-secondary">Clear</a>
             <button type="submit" class="btn btn-primary">Submit 3/3</button>
         </div>
     </form>

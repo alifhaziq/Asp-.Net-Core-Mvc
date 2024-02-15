@@ -18,7 +18,7 @@
                     <option value="other">Others</option>
                 </select>
             <br>
-            <input type="text" class="form-control" id="otherInfo1" placeholder="Other, Please Specify" style="display: none;">
+            <input asp-for="Other1Option" type="text" class="form-control" id="otherInfo1" placeholder="Other, Please Specify" style="display: none;">
          </div>
 
         <div class="col-md-6 col-sm-12">
@@ -39,7 +39,7 @@
                 <option value="no">No</option>
             </select>
             <br>
-                <input type="text" class="form-control" id="otherInfo3" placeholder="Account No" style="display: none;">
+                <input asp-for="YesOption" type="text" class="form-control" id="otherInfo3" placeholder="Account No" style="display: none;">
         </div>
 
         <div class="col-md-12 col-sm-12">
@@ -63,13 +63,13 @@
         <div class="col-md-6 col-sm-12">
             <div class="input">
                 <input asp-for="Other5Name" type="text" class="form-control" id="fullname" placeholder=" ">
-                <label for="fullname" class="form-label">Name <span class="text-danger">*</span></label>
+                <label for="fullname" class="form-label">Name <span class="text-danger"></span></label>
             </div>
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="input">
                 <input asp-for="Other5Relationship "type="text" class="form-control" id="fullname" placeholder=" ">
-                <label for="fullname" class="form-label">Relationship <span class="text-danger">*</span></label>
+                <label for="fullname" class="form-label">Relationship <span class="text-danger"></span></label>
             </div>
         </div>
         <div class="col-md-12 col-sm-12">
@@ -85,19 +85,19 @@
         <div class="col-md-4 col-sm-12">
             <div class="input">
                 <input asp-for="Other6Name"  type="text" class="form-control" id="fullname" placeholder=" ">
-                <label for="fullname" class="form-label">Name of Related person <span class="text-danger">*</span></label>
+                <label for="fullname" class="form-label">Name of Related person <span class="text-danger"></span></label>
             </div>
         </div>
         <div class="col-md-4 col-sm-12">
             <div class="input">
                 <input asp-for="Other6Account" type="text" class="form-control" id="fullname" placeholder=" ">
-                <label for="fullname" class="form-label">Trading Account Number <span class="text-danger">*</span></label>
+                <label for="fullname" class="form-label">Trading Account Number <span class="text-danger"></span></label>
             </div>
         </div>
         <div class="col-md-4 col-sm-12">
             <div class="input">
                 <input asp-for="Other6Relationship" type="text" class="form-control" id="fullname" placeholder=" ">
-                <label for="fullname" class="form-label">Relationship <span class="text-danger">*</span></label>
+                <label for="fullname" class="form-label">Relationship <span class="text-danger"></span></label>
             </div>
         </div>
     </div>
@@ -137,13 +137,13 @@
         <div class="col-md-6 col-sm-12">
             <div class="input">
                 <input asp-for="BankName" type="text" class="form-control" id="nric" placeholder="">
-                <label for="nric" class="form-label">Bank Name <span class="text-danger">*</span></label>
+                <label for="nric" class="form-label">Bank Name <span class="text-danger"></span></label>
             </div>
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="input">
                 <input asp-for="BankAccount" type="text" class="form-control" id="nric" placeholder="">
-                <label for="nric" class="form-label">Account No. <span class="text-danger">*</span></label>
+                <label for="nric" class="form-label">Account No. <span class="text-danger"></span></label>
             </div>
         </div>
     </div>
@@ -152,7 +152,7 @@
     <hr>
     <div class="row">
         <div class="col-md-4 col-sm-12">
-            <p>Declaration whether a PEP <span class="text-danger">*</span></p>
+            <p>Declaration whether a PEP <span class="text-danger"></span></p>
 
             <select asp-for="Pep" class="form-select" id="pep" onchange="pepForm()">
                 <option selected>Please Choose</option>
@@ -190,13 +190,13 @@
             </select>
             <br>
             <div class="form-check" id="resident" style="display: none;">
-                <input class="form-check-input" type="checkbox" value="" id="residentCheckbox">
+                <input class="form-check-input" type="radio" name="dec" id="residentCheckbox">
                 <label class="form-check-label" for="residentCheckbox">
                     I/we<u> DO NOT HAVE domestic ringgit credit facilities</u> and hereby undertake to inform the
                     company immediately should I/we obtain domestic ringgit facilities or upon request by the company
                 </label>
 
-                <input class="form-check-input" type="checkbox" value="" id="nonResidentCheckbox">
+                <input class="form-check-input" type="radio" name="dec" id="nonResidentCheckbox">
                 <label class="form-check-label" for="nonResidentCheckbox">
                     I/we <u>HAVE domestic ringgit credit facilities</u> and are thus allowed to convert up to RM1,000,000.00 in aggregate for an individual
                     or up to RM50,000,000.00 in aggregate for a corporation, on a corporate group basis per calendar year for investment in foreign currency assets.
@@ -205,7 +205,6 @@
         </div>
     </div>
     <div class="text-right mt-3">
-        <a type="button" href="" class="btn btn-secondary">Clear</a>
         <button type="submit" class="btn btn-primary">Proceed To Next Step 2/3</button>
     </div>
     </form>
