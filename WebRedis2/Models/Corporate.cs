@@ -1,6 +1,6 @@
 ﻿namespace WebRedis2.Models
 {
-    public class Corprate
+    public class Corporate
     {
         public string Name { get; set; } = string.Empty;
         public int RegisterationNo { get; set; }
