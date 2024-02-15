@@ -4,8 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-var conn = builder.Configuration["RedisConnection"];
-builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(builder.Configuration["RedisConnection"]));
+//var conn = builder.Configuration["RedisConnection"];
+//builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(builder.Configuration["RedisConnection"]));
 builder.Services.AddSingleton<IDictionary<string, object>>(new Dictionary<string, object>());
 var app = builder.Build();
 
@@ -21,7 +21,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(
