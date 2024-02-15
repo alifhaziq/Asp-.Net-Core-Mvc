@@ -94,11 +94,11 @@ function DeclarationForm() {
 }
 
 function UsPersonFields() {
-    var usPersonCheckbox = document.getElementById("usPerson");
+    var usPersonRadio = document.getElementById("usPerson");
     var usIdentificationNumberContainer = document.getElementById("usIdentificationNumberContainer");
     var usTaxIdentificationNumberContainer = document.getElementById("usTaxIdentificationNumberContainer");
 
-    if (usPersonCheckbox.checked) {
+    if (usPersonRadio.checked) {
         usIdentificationNumberContainer.style.display = "block";
         usTaxIdentificationNumberContainer.style.display = "block";
     } else {

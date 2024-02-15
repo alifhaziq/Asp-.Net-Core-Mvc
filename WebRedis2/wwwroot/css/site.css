@@ -1,5 +1,7 @@
+<link rel="stylesheet" type="text/css" href="~/css/styles.css" >
+
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -20,3 +22,12 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.form-select {
+    padding: 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-radius: 30px;
+}
+
+
