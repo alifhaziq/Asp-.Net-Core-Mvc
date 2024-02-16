@@ -143,3 +143,25 @@ function DisclosureFields() {
     }
 }
 
+function letterPledgeCheckbox() {
+    var letOfPledCheckbox = document.getElementById("letOfPled");
+    var pledgeFacilityRequestedInput = document.getElementById("pledgeFacilityRequested");
+
+    if (letOfPledCheckbox.checked) {
+        pledgeFacilityRequestedInput.style.display = "block";
+    } else {
+        pledgeFacilityRequestedInput.style.display = "none";
+    }
+}
+
+function AuthorizationCheckbox() {
+    var setOffAuthorizationCheckbox = document.getElementById("setOffAuthorizationCheckbox");
+    var AuthorizationSetOffInput = document.getElementById("AuthorizationSetOff");
+
+    if (setOffAuthorizationCheckbox.checked) {
+        AuthorizationSetOffInput.style.display = "block";
+    } else {
+        AuthorizationSetOffInput.style.display = "none";
+    }
+}
+

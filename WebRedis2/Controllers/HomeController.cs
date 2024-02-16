@@ -109,7 +109,7 @@ namespace WebRedis2.Controllers
             //_redisConnection.GetDatabase().StringSet("user:application3", JsonConvert.SerializeObject(model));
             var sessionId = GetUserSessionId();
             _sessionStorage[$"user:application3:{sessionId}"] = JsonConvert.SerializeObject(model);
-            var filePath = Path.Combine(GetDataDirectory(), $"user_application2_{sessionId}.txt");
+            var filePath = Path.Combine(GetDataDirectory(), $"user_application3_{sessionId}.txt");
             System.IO.File.WriteAllText(filePath, JsonConvert.SerializeObject(model));
             return RedirectToAction("FinalStep");
         }
@@ -122,31 +122,30 @@ namespace WebRedis2.Controllers
             var application2FilePath = Path.Combine(GetDataDirectory(), $"user_application2_{sessionId}.txt");
             var application3FilePath = Path.Combine(GetDataDirectory(), $"user_application3_{sessionId}.txt");
 
-            Personal personal = JsonConvert.DeserializeObject<Personal>(System.IO.File.ReadAllText(personalFilePath));
-            Corporate corporate = JsonConvert.DeserializeObject<Corporate>(System.IO.File.ReadAllText(corporateFilePath));
-            Application2 application2 = JsonConvert.DeserializeObject<Application2>(System.IO.File.ReadAllText(application2FilePath));
-            Application3 application3 = JsonConvert.DeserializeObject<Application3>(System.IO.File.ReadAllText(application3FilePath));
+            string results = null;
+            if (Path.Exists(personalFilePath))
+            {
+                results = System.IO.File.ReadAllText(personalFilePath);
+                //Personal personal = JsonConvert.DeserializeObject<Personal>(System.IO.File.ReadAllText(personalFilePath));
+            }
+            else
+            {
+                results = System.IO.File.ReadAllText(corporateFilePath);
+                //Corporate corporate = JsonConvert.DeserializeObject<Corporate>(System.IO.File.ReadAllText(corporateFilePath));
+            }
+
+            results = $"{results}\n\n";
+            results = $"{results}{System.IO.File.ReadAllText(application2FilePath)}\n\n";
+            results = $"{results}{System.IO.File.ReadAllText(application3FilePath)}\n\n";
+
+            var filePath = Path.Combine(GetDataDirectory(), $"OpenAccountApplication{sessionId}.txt");
+            System.IO.File.WriteAllText(filePath, results);
+
+            //Application2 application2 = JsonConvert.DeserializeObject<Application2>(System.IO.File.ReadAllText(application2FilePath));
+            //Application3 application3 = JsonConvert.DeserializeObject<Application3>(System.IO.File.ReadAllText(application3FilePath));
 
             return View();
         }
-
-        //public IActionResult FinalStep()
-        //{
-         
-        //    //var model = JsonConvert.DeserializeObject<Personal>(_redisConnection.GetDatabase().StringGet("user:personal"));
-        //    //var step2Data = JsonConvert.DeserializeObject<Application2>(_redisConnection.GetDatabase().StringGet("user:application2"));
-        //    //var step3Data = JsonConvert.DeserializeObject<Application2>(_redisConnection.GetDatabase().StringGet("user:application3"));
-        //    var sessionId = GetUserSessionId();
-        //    var modelJson = _sessionStorage[$"user:personal:{sessionId}"] as string;
-        //    var corporateJson = _sessionStorage[$"user:corporate:{sessionId}"] as string;
-        //    var application2Json = _sessionStorage[$"user:application2:{sessionId}"] as string;
-        //    var application3Json = _sessionStorage[$"user:application3:{sessionId}"] as string;
-        //    var model = JsonConvert.DeserializeObject<Personal>(modelJson);
-        //    var corporate = JsonConvert.DeserializeObject<Corporate>(corporateJson);
-        //    var application2 = JsonConvert.DeserializeObject<Application2>(application2Json);
-        //    var application3 = JsonConvert.DeserializeObject<Application3>(application3Json);
-        //    return View();
-        //}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
